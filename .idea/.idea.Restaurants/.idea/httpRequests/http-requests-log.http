@@ -1,0 +1,20 @@
+﻿GET http://localhost:5173/weatherforecast/
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+content-length: 0
+
+<> 2025-01-25T212459.200.json
+
+###
+
+GET http://localhost:5173/weatherforecast/
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+content-length: 0
+
+<> 2025-01-25T212442.200.json
+
+###
+
