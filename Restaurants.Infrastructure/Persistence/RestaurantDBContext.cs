@@ -8,15 +8,11 @@ using System.Threading.Tasks;
 
 namespace Restaurants.Infrastructure.Persistence;
 
-internal class RestaurantDBContext : DbContext
+internal class RestaurantDBContext(DbContextOptions<RestaurantDBContext> options) : DbContext (options)
 {
     DbSet<Restaurant> Restaurants { get; set; }
     DbSet<Dish> Dishes { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseSqlServer("Server=TAOSIF\\SQLEXPRESS;Database=RestaurantDB;TrustServerCertificate=True;Trusted_Connection=True");
-    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
