@@ -4,21 +4,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.12.35514.174 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.API", "Restaurants.API\Restaurants.API.csproj", "{96E7B567-4898-470B-AA57-254189D74EA5}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D4C07503-7537-4DB6-9D58-46B54E82B251} = {D4C07503-7537-4DB6-9D58-46B54E82B251}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Domain", "Restaurants.Domain\Restaurants.Domain.csproj", "{860C16F7-23E5-44DC-98E1-10F50BF0E9BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Application", "Restaurants.Application\Restaurants.Application.csproj", "{D4C07503-7537-4DB6-9D58-46B54E82B251}"
-	ProjectSection(ProjectDependencies) = postProject
-		{860C16F7-23E5-44DC-98E1-10F50BF0E9BF} = {860C16F7-23E5-44DC-98E1-10F50BF0E9BF}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Infrastructure", "Restaurants.Infrastructure\Restaurants.Infrastructure.csproj", "{E3860D75-4D8D-4E36-929D-C1CA27902A5D}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D4C07503-7537-4DB6-9D58-46B54E82B251} = {D4C07503-7537-4DB6-9D58-46B54E82B251}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
