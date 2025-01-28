@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Restaurants.Infrastructure.Persistence;
 
-internal class RestaurantDBContext(DbContextOptions<RestaurantDBContext> options) : DbContext (options)
+public class RestaurantDBContext(DbContextOptions<RestaurantDBContext> options) : DbContext (options)
 {
-    DbSet<Restaurant> Restaurants { get; set; }
-    DbSet<Dish> Dishes { get; set; }
+    public DbSet<Restaurant> Restaurants { get; set; }
+    public DbSet<Dish> Dishes { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

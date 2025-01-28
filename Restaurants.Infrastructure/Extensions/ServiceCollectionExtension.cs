@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Restaurants.Infrastructure.Persistence;
+using Restaurants.Infrastructure.Seeders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,8 @@ public static class ServiceCollectionExtension
         {
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
         });
+
+        services.AddScoped<IRestaurantSeeder, RestaurantSeeder>();
     }
 
 }
