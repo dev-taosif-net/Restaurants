@@ -1,4 +1,5 @@
-﻿using Restaurants.Domain.Entites;
+﻿using Restaurants.Application.Restaurant.Dtos;
+using Restaurants.Domain.Entites;
 using Restaurants.Domain.IRepository;
 using System;
 using System.Collections.Generic;
@@ -10,14 +11,19 @@ namespace Restaurants.Application.Restaurant;
 
 internal class RestaurantService (IRestaurantRepository restaurantRepository) : IRestaurantService
 {
-    public async Task<IEnumerable<Restaurants.Domain.Entites.Restaurant>> GetAllRestaurants()
+    public async Task<IEnumerable<RestaurantDto?>> GetAllRestaurants()
     {
-        return await restaurantRepository.GetAll();
+        var result = await restaurantRepository.GetAll();
+        var data = result.Select(RestaurantDto.FromRestaurant).ToList();
+
+        return data;
+
 
     }
 
-    public async Task<Domain.Entites.Restaurant?> GetById(int id)
+    public async Task<RestaurantDto?> GetById(int id)
     {
-        return await restaurantRepository.GetById(id);
+        var result = await restaurantRepository.GetById(id);
+        return RestaurantDto.FromRestaurant(result);
     }
 }

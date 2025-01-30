@@ -1,16 +1,16 @@
-﻿using Restaurants.Domain.Entites;
+﻿using Restaurants.Application.Restaurant.Dtos;
+using Restaurants.Domain.Entites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Restaurants.Domain.Entites;
 
 namespace Restaurants.Application.Restaurant;
 
 public interface IRestaurantService
 {
-    Task<IEnumerable<Domain.Entites.Restaurant>> GetAllRestaurants();
-    Task<Domain.Entites.Restaurant?> GetById(int id);
+    Task<IEnumerable<RestaurantDto?>> GetAllRestaurants();
+    Task<RestaurantDto?> GetById(int id);
 
 }

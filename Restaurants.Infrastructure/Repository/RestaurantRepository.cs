@@ -14,7 +14,9 @@ internal class RestaurantRepository(RestaurantDBContext dbContext) : IRestaurant
 {
     public async Task<IEnumerable<Restaurant>> GetAll()
     {
-        return await dbContext.Restaurants.ToListAsync();
+        return await dbContext.Restaurants
+            .Include(x=>x.Dishes)
+            .ToListAsync();
     }
 
     public async Task<Restaurant?> GetById(int id)
