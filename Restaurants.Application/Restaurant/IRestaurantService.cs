@@ -12,5 +12,6 @@ public interface IRestaurantService
 {
     Task<IEnumerable<RestaurantDto?>> GetAllRestaurants();
     Task<RestaurantDto?> GetById(int id);
+    Task<int> CreateRestaurant(CreateRestaurantDto obj);
 
 }

@@ -10,3 +10,20 @@ GET {{Restaurants.API_HostAddress}}/api/restaurant/Get?id={{id}}
 GET {{Restaurants.API_HostAddress}}/api/restaurant/GetAll
 
 ###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurant/CreateRestaurant
+Content-Type: application/json
+
+{
+  "Code": "123e4567-e89b-12d3-a456-426614174000",
+  "Name": "Tasty Bites",
+  "Description": "A cozy restaurant offering a variety of delicious dishes.",
+  "Category": "Italian",
+  "HasDelivery": true,
+  "City": "New York",
+  "Street": "123 Main St",
+  "PostalCode": "10001",
+  "Dishes": []
+}
+
+###

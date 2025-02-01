@@ -12,6 +12,13 @@ namespace Restaurants.Application.Restaurant;
 
 internal class RestaurantService (IRestaurantRepository restaurantRepository , IMapper mapper) : IRestaurantService
 {
+    public async Task<int> CreateRestaurant(CreateRestaurantDto obj)
+    {
+        var data = mapper.Map<Domain.Entites.Restaurant>(obj);
+        var res = await restaurantRepository.Create(data);
+        return res;
+    }
+
     public async Task<IEnumerable<RestaurantDto?>> GetAllRestaurants()
     {
         var result = await restaurantRepository.GetAll();

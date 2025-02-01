@@ -12,6 +12,14 @@ public class RestaurantProfile : Profile
 {
     public RestaurantProfile()
     {
+        CreateMap<CreateRestaurantDto, Domain.Entites.Restaurant>()
+            .ForMember(d => d.Address, src => src.MapFrom(x => new Address
+            {
+                Street = x.Street,
+                City = x.City,
+                PostalCode = x.PostalCode
+            }));
+
         CreateMap<Domain.Entites.Restaurant, RestaurantDto>()
             .ForMember(d=>d.Street , src => src.MapFrom(x=>x.Address == null ? null : x.Address.Street))
             .ForMember(d => d.City, src => src.MapFrom(x => x.Address == null ? null : x.Address.City))
