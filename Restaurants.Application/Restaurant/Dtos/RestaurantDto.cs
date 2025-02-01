@@ -20,23 +20,23 @@ public class RestaurantDto
     public string? PostalCode { get; set; }
     public List<DishDto> Dishes { get; set; } = [];
 
-    public static RestaurantDto? FromRestaurant(Restaurants.Domain.Entites.Restaurant? restaurant)
-    {
-        if (restaurant == null) return null;
+    //public static RestaurantDto? FromRestaurant(Restaurants.Domain.Entites.Restaurant? restaurant)
+    //{
+    //    if (restaurant == null) return null;
 
-        return new RestaurantDto
-        {
-            Id = restaurant.Id,
-            Code = restaurant.Code,
-            Name = restaurant.Name,
-            Description = restaurant.Description,
-            Category = restaurant.Category,
-            HasDelivery = restaurant.HasDelivery,
-            City = restaurant.Address?.City,
-            Street = restaurant.Address?.Street,
-            PostalCode = restaurant.Address?.PostalCode,
-            Dishes = restaurant.Dishes.Select(DishDto.FromDish).ToList()
-        };
-    }
+    //    return new RestaurantDto
+    //    {
+    //        Id = restaurant.Id,
+    //        Code = restaurant.Code,
+    //        Name = restaurant.Name,
+    //        Description = restaurant.Description,
+    //        Category = restaurant.Category,
+    //        HasDelivery = restaurant.HasDelivery,
+    //        City = restaurant.Address?.City,
+    //        Street = restaurant.Address?.Street,
+    //        PostalCode = restaurant.Address?.PostalCode,
+    //        Dishes = restaurant.Dishes.Select(DishDto.FromDish).ToList()
+    //    };
+    //}
 
 }
