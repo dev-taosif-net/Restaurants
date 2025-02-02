@@ -33,6 +33,11 @@ public class RestaurantController (IRestaurantService restaurantService) : Contr
     [Route("CreateRestaurant")]
     public async Task<IActionResult> CreateRestaurant(CreateRestaurantDto obj)
     {
+        if(!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
         var id = await restaurantService.CreateRestaurant(obj);
         return Ok(id);
     }
